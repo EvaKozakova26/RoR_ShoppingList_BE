@@ -4,6 +4,5 @@ class CreateShoppingLists < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_reference :items, :shopping_list
   end
 end
