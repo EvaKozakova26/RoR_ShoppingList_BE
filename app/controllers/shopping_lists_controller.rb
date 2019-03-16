@@ -1,9 +1,12 @@
 class ShoppingListsController < ApplicationController
-  protect_from_forgery with: :null_session
+  skip_forgery_protection
   wrap_parameters format: [:json, :xml, :url_encoded_form, :multipart_form]
 
   def getLists
     shoppingLists = ShoppingList.all
+    puts current_user
+    user = current_user
+    puts user
     respond_to do |format|
       format.any { render json: shoppingLists, content_type: 'application/json' }
     end
