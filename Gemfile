@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# enable cache
+gem 'actionpack-action_caching'
+
+
 # for enabling cors policy
 gem 'rack-cors', require: 'rack/cors'
 

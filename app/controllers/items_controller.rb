@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
-  protect_from_forgery with: :null_session
+  skip_forgery_protection
+  before_action :authenticate, except: :public
+  caches_action :getItems
+
   def newItem
     item = params[:name]
     puts item + " toto je co prisllo jemno"
