@@ -12,24 +12,24 @@
 
 ActiveRecord::Schema.define(version: 2019_03_16_111107) do
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.integer "count"
     t.boolean "state"
-    t.bigint "shopping_list_id"
+    t.integer "shopping_list_id"
     t.datetime "updated_at", null: false
     t.index ["shopping_list_id"], name: "index_items_on_shopping_list_id"
   end
 
-  create_table "shopping_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+  create_table "shopping_lists", force: :cascade do |t|
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_shopping_lists_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
     t.datetime "created_at", null: false

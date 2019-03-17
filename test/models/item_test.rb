@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ItemTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should save item " do
+    item = Item.new(name: "myItem", state: false, count: 1)
+    assert item.save
+  end
 end
