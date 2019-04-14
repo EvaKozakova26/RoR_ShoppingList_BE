@@ -14,7 +14,7 @@ class ShoppingListsController < ApplicationController
 
   def saveList
     items = params[:_json]
-    shopping_list = ShoppingList.create(user_id:current_user.id)
+    shopping_list = ShoppingList.create_list(current_user)
     items.each do |item|
       Item.update(item[:id], shopping_list_id: shopping_list[:id])
     end

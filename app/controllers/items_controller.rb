@@ -1,11 +1,8 @@
 class ItemsController < ApplicationController
   skip_forgery_protection
-  before_action :authenticate, except: :public
   caches_action :getItems
 
   def newItem
-    item = params[:name]
-    puts item + " toto je co prisllo jemno"
     createdAt = DateTime.now
     updatedAt = DateTime.now
     itemNew = Item.create(name: params[:name], count: params[:count], state: params[:state], created_at: createdAt, updated_at: updatedAt)
