@@ -1,24 +1,22 @@
-# README
+## Jak projekt spustit lokálně (RubyMine IDE)
+1. Otevřít projekt `rails`
+2. Je potřeba mít nainstalované `Ruby + devkit (verze 2.4.4)` a `MySQL server (verze 5.7)`
+3. v souboru `database.yml ` je potřeba změnit přihlašovací údaje do lokální db
+4. Konfigurace projektu
+```
+gem install rails
+bundle install
+```
+5. DB migrace
+```
+rake db:drop:all
+rake db:create:all
+rails db:migrate 
+```
+6. Spuštění
+```
+rails server
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplikace běží na `localhost:8080`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
